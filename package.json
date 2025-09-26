@@ -1,0 +1,41 @@
+{
+  "name": "nuro-app",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@antfu/eslint-config": "^5.4.1",
+    "@shopify/react-native-skia": "2.2.12",
+    "expo": "~54.0.10",
+    "expo-av": "~16.0.7",
+    "expo-linear-gradient": "~15.0.7",
+    "expo-localization": "~17.0.7",
+    "expo-secure-store": "^15.0.7",
+    "expo-status-bar": "~3.0.8",
+    "i18next": "^25.5.2",
+    "nativewind": "^4.2.1",
+    "react": "19.1.0",
+    "react-i18next": "^16.0.0",
+    "react-native": "0.81.4",
+    "react-native-mmkv": "^3.3.3",
+    "react-native-reanimated": "^4.1.2",
+    "react-native-safe-area-context": "5.6.0",
+    "react-native-worklets": "0.5.1",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "@eslint/config-helpers": "^0.4.0",
+    "@types/react": "~19.1.0",
+    "eslint": "^9.36.0",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~5.9.2",
+    "undefined": "^0.1.0"
+  },
+  "private": true
+}
