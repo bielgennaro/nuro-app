@@ -1,50 +1,69 @@
 {
-    "onboarding": {
-        "title": "Sua jornada de bem-estar e meditação começa aqui",
-        "subtitle": "Encontre paz interior com o Nuro",
-        "getStarted": "Começar Jornada"
-    },
-    "common": {
-        "welcome": "Bem-vindo",
-        "continue": "Continuar",
-        "back": "Voltar",
-        "next": "Próximo",
-        "done": "Concluído",
-        "cancel": "Cancelar",
-        "save": "Salvar",
-        "loading": "Carregando..."
-    },
-    "meditation": {
-        "title": "Meditação",
-        "subtitle": "Encontre sua paz interior",
-        "start": "Iniciar Meditação",
-        "pause": "Pausar",
-        "resume": "Retomar",
-        "finish": "Finalizar",
-        "duration": "Duração",
-        "breathe": "Respire",
-        "relax": "Relaxe",
-        "focus": "Foque"
-    },
-    "moods": {
-        "calm": "Calmo",
-        "focused": "Focado",
-        "anxious": "Ansioso",
-        "energized": "Energizado",
-        "sleepy": "Sonolento"
-    },
-    "greetings": {
-        "morning": "Bom dia",
-        "afternoon": "Boa tarde",
-        "evening": "Boa noite",
-        "night": "Hora de descansar"
-    },
-    "settings": {
-        "title": "Configurações",
-        "language": "Idioma",
-        "notifications": "Notificações",
-        "privacy": "Privacidade",
-        "about": "Sobre",
-        "version": "Versão"
-    }
+  "onboarding": {
+    "title": "Sua jornada de bem-estar e meditação começa aqui",
+    "subtitle": "Encontre paz interior com o Nuro",
+    "getStarted": "Começar Jornada"
+  },
+  "login": {
+    "welcome": "Bem-vindo ao Nuro",
+    "subtitle": "Entre para continuar sua jornada",
+    "name": "Nome",
+    "email": "Email",
+    "password": "Senha",
+    "login": "Entrar",
+    "continue": "Continuar",
+    "orContinueWith": "Ou continue com",
+    "forgotPassword": "Esqueceu sua senha? \nSem problemas!",
+    "name_placeholder": "Entre como você gostaria de ser chamado",
+    "email_placeholder": "Digite seu melhor e -mail",
+    "password_placeholder": "Digite sua senha mais segura",
+    "register": "Cadastrar"
+  },
+  "common": {
+    "welcome": "Bem-vindo",
+    "continue": "Continuar",
+    "back": "Voltar",
+    "next": "Próximo",
+    "done": "Concluído",
+    "cancel": "Cancelar",
+    "save": "Salvar",
+    "loading": "Carregando..."
+  },
+  "meditation": {
+    "title": "Meditação",
+    "subtitle": "Encontre sua paz interior",
+    "start": "Iniciar Meditação",
+    "pause": "Pausar",
+    "resume": "Retomar",
+    "finish": "Finalizar",
+    "duration": "Duração",
+    "breathe": "Respire",
+    "relax": "Relaxe",
+    "focus": "Foque"
+  },
+  "moods": {
+    "calm": "Calmo",
+    "focused": "Focado",
+    "anxious": "Ansioso",
+    "energized": "Energizado",
+    "sleepy": "Sonolento"
+  },
+  "greetings": {
+    "morning": "Bom dia",
+    "afternoon": "Boa tarde",
+    "evening": "Boa noite",
+    "night": "Hora de descansar"
+  },
+  "settings": {
+    "title": "Configurações",
+    "language": "Idioma",
+    "notifications": "Notificações",
+    "privacy": "Privacidade",
+    "about": "Sobre",
+    "version": "Versão"
+  },
+  "login_screen": {
+    "password_placeholder": "Digite sua senha",
+    "email_placeholder": "Digite seu e -mail"
+  }
 }

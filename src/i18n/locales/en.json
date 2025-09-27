@@ -1,50 +1,70 @@
 {
-    "onboarding": {
-        "title": "Your wellness and meditation journey starts here",
-        "subtitle": "Find inner peace with Nuro",
-        "getStarted": "Get Started"
-    },
-    "common": {
-        "welcome": "Welcome",
-        "continue": "Continue",
-        "back": "Back",
-        "next": "Next",
-        "done": "Done",
-        "cancel": "Cancel",
-        "save": "Save",
-        "loading": "Loading..."
-    },
-    "meditation": {
-        "title": "Meditation",
-        "subtitle": "Find your inner peace",
-        "start": "Start Meditation",
-        "pause": "Pause",
-        "resume": "Resume",
-        "finish": "Finish",
-        "duration": "Duration",
-        "breathe": "Breathe",
-        "relax": "Relax",
-        "focus": "Focus"
-    },
-    "moods": {
-        "calm": "Calm",
-        "focused": "Focused",
-        "anxious": "Anxious",
-        "energized": "Energized",
-        "sleepy": "Sleepy"
-    },
-    "greetings": {
-        "morning": "Good morning",
-        "afternoon": "Good afternoon",
-        "evening": "Good evening",
-        "night": "Time to rest"
-    },
-    "settings": {
-        "title": "Settings",
-        "language": "Language",
-        "notifications": "Notifications",
-        "privacy": "Privacy",
-        "about": "About",
-        "version": "Version"
-    }
+  "onboarding": {
+    "title": "Your wellness and meditation journey starts here",
+    "subtitle": "Find inner peace with Nuro",
+    "getStarted": "Get Started"
+  },
+  "login": {
+    "welcome": "Welcome to Nuro",
+    "subtitle": "Sign in to continue your journey",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "login": "Sign In",
+    "continue": "Continue",
+    "orContinueWith": "Or continue with",
+    "forgotPassword": "Forgot your password? No problem!",
+    "placeholder": "Enter how you would like to be called",
+    "name_placeholder": "Enter how you would like to be called",
+    "email_placeholder": "Enter your best email",
+    "password_placeholder": "Enter your most secure password",
+    "register": "Register"
+  },
+  "common": {
+    "welcome": "Welcome",
+    "continue": "Continue",
+    "back": "Back",
+    "next": "Next",
+    "done": "Done",
+    "cancel": "Cancel",
+    "save": "Save",
+    "loading": "Loading..."
+  },
+  "meditation": {
+    "title": "Meditation",
+    "subtitle": "Find your inner peace",
+    "start": "Start Meditation",
+    "pause": "Pause",
+    "resume": "Resume",
+    "finish": "Finish",
+    "duration": "Duration",
+    "breathe": "Breathe",
+    "relax": "Relax",
+    "focus": "Focus"
+  },
+  "moods": {
+    "calm": "Calm",
+    "focused": "Focused",
+    "anxious": "Anxious",
+    "energized": "Energized",
+    "sleepy": "Sleepy"
+  },
+  "greetings": {
+    "morning": "Good morning",
+    "afternoon": "Good afternoon",
+    "evening": "Good evening",
+    "night": "Time to rest"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "notifications": "Notifications",
+    "privacy": "Privacy",
+    "about": "About",
+    "version": "Version"
+  },
+  "login_screen": {
+    "email_placeholder": "Enter your email",
+    "password_placeholder": "Enter your password"
+  }
 }

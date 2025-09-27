@@ -1,216 +1,224 @@
+// src/constants/colors.ts
 /**
  * Nuro Design System - Color Tokens
- *
- * Based on the mascot's color palette.
+ * Based on Material Design 3.0 principles with biophilic design elements
+ * Optimized for WCAG AAA accessibility and reduced cognitive load
  */
 
 export const colors = {
-  // Primary - Based on Nuro's green
+  // Primary Palette - Based on Nuro mascot
   primary: {
-    50: '#f0fdf4',
-    100: '#dcfce7',
-    200: '#bbf7d0',
-    300: '#86efac',
-    400: '#4ade80',
-    500: '#22c55e', // Main green
-    600: '#16a34a',
-    700: '#15803d',
-    800: '#166534',
-    900: '#14532d',
-    950: '#052e16',
+    50: '#f0fdf4',   // Whisper green
+    100: '#dcfce7',  // Morning dew
+    200: '#bbf7d0',  // Soft mint
+    300: '#86efac',  // Light sage
+    400: '#4ade80',  // Fresh green
+    500: '#22c55e',  // Balance green
+    600: '#16a34a',  // Forest meditation
+    700: '#15803d',  // Deep forest
+    800: '#166534',  // Pine shadow
+    900: '#14532d',  // Midnight forest
+    950: '#052e16',  // Deep earth
   },
 
-  // Secondary - Zen blue/teal for meditation
-  secondary: {
-    50: '#f0fdfa',
-    100: '#ccfbf1',
-    200: '#99f6e4',
-    300: '#5eead4', // Light teal from background
-    400: '#2dd4bf',
-    500: '#14b8a6',
-    600: '#0d9488',
-    700: '#0f766e',
-    800: '#115e59',
-    900: '#134e4a',
-    950: '#042f2e',
+  // Nuro Brand Specific
+  nuro: {
+    primary: '#7EBF87',    // Nuro body color (extracted)
+    secondary: '#A4D4AC',  // Nuro light accent
+    tertiary: '#5A9C65',   // Nuro shadow
+    glow: '#E8FFE8',       // Aura effect
+    energy: '#C5F0CC',     // Energy rings
   },
 
-  // Accent - Soft yellow/cream for highlights
-  accent: {
-    50: '#fefce8',
-    100: '#fef9c3',
-    200: '#fef08a', // Glow effect
-    300: '#fde047',
-    400: '#facc15',
-    500: '#eab308',
-    600: '#ca8a04',
-    700: '#a16207',
-    800: '#854d0e',
-    900: '#713f12',
+  // Semantic Colors for Mental States
+  mood: {
+    calm: {
+      light: '#E0F2FE',    // Sky meditation
+      base: '#7DD3FC',     // Peaceful blue
+      dark: '#0284C7',     // Deep calm
+      contrast: '#075985', // Focus state
+    },
+    anxious: {
+      light: '#FEE2E2',    // Gentle warning
+      base: '#FCA5A5',     // Soft alert
+      dark: '#DC2626',     // Critical (rarely used)
+      muted: '#F87171',    // Reduced intensity
+    },
+    focused: {
+      light: '#F3E8FF',    // Light purple
+      base: '#C084FC',     // ADHD focus purple
+      dark: '#9333EA',     // Deep focus
+      intense: '#7C3AED',  // Hyperfocus mode
+    },
+    energized: {
+      light: '#FEF3C7',    // Sunrise
+      base: '#FCD34D',     // Morning energy
+      dark: '#F59E0B',     // Active state
+      vibrant: '#FBBF24',  // Celebration
+    },
   },
 
-  // Neutral - Grays for text and UI
+  // Neutral Palette - Reduced contrast for sensory comfort
   neutral: {
-    50: '#fafafa',
-    100: '#f5f5f5',
-    200: '#e5e5e5',
-    300: '#d4d4d4',
-    400: '#a3a3a3',
-    500: '#737373',
-    600: '#525252',
-    700: '#404040',
-    800: '#262626',
-    900: '#171717',
-    950: '#0a0a0a',
+    0: '#FFFFFF',
+    50: '#FAFAFA',
+    100: '#F4F4F5',
+    200: '#E4E4E7',
+    300: '#D4D4D8',
+    400: '#A1A1AA',
+    500: '#71717A',
+    600: '#52525B',
+    700: '#3F3F46',
+    800: '#27272A',
+    900: '#18181B',
+    950: '#09090B',
   },
 
-  // Semantic colors
-  success: '#10b981', // Emerald
-  warning: '#f59e0b', // Amber
-  error: '#ef4444', // Red
-  info: '#3b82f6', // Blue
-
-  // Meditation mood colors
-  moods: {
-    calm: '#8b5cf6', // Violet
-    focused: '#3b82f6', // Blue
-    anxious: '#ec4899', // Pink
-    energized: '#f97316', // Orange
-    sleepy: '#6366f1', // Indigo
-  },
-
-  // Background gradients
-  gradients: {
-    meditation: ['#5eead4', '#86efac'], // Teal to green
-    focus: ['#3b82f6', '#8b5cf6'], // Blue to violet
-    sleep: ['#6366f1', '#a78bfa'], // Indigo to purple
-    morning: ['#fbbf24', '#f59e0b'], // Yellow gradient
-    evening: ['#ec4899', '#8b5cf6'], // Pink to violet
-  },
-
-  // Surface colors for cards and containers
+  // Surface Colors - Glassmorphism ready
   surface: {
-    primary: '#ffffff',
-    secondary: '#fafafa',
-    tertiary: '#f5f5f5',
-    elevated: '#ffffff',
+    primary: '#FFFFFF',
+    secondary: '#FAFAFA',
+    tertiary: '#F4F4F5',
+    elevated: 'rgba(255, 255, 255, 0.95)',
     overlay: 'rgba(0, 0, 0, 0.5)',
-    backdrop: 'rgba(0, 0, 0, 0.3)',
+    glass: {
+      light: 'rgba(255, 255, 255, 0.7)',
+      medium: 'rgba(255, 255, 255, 0.5)',
+      dark: 'rgba(255, 255, 255, 0.3)',
+    },
+    blur: {
+      light: 'rgba(126, 191, 135, 0.1)',  // Nuro tint
+      medium: 'rgba(126, 191, 135, 0.2)',
+      strong: 'rgba(126, 191, 135, 0.3)',
+    },
   },
 
-  // Text colors with semantic meaning
+  // Gradient Definitions - Trending 2025
+  gradients: {
+    nuroCalm: ['#7EBF87', '#7DD3FC'],      // Primary meditation
+    focus: ['#C084FC', '#7C3AED'],         // ADHD focus mode
+    sunrise: ['#FCD34D', '#FCA5A5'],       // Morning meditation
+    night: ['#6366F1', '#4F46E5'],         // Sleep mode
+    aurora: ['#86efac', '#7DD3FC', '#C084FC'], // Premium feature
+    breathing: {
+      inhale: ['#E0F2FE', '#7DD3FC'],
+      hold: ['#7DD3FC', '#7EBF87'],
+      exhale: ['#7EBF87', '#E8FFE8'],
+    },
+  },
+
+  // Functional Colors
+  functional: {
+    success: '#10B981',
+    warning: '#F59E0B',
+    error: '#EF4444',
+    info: '#3B82F6',
+    premium: '#FFD700',  // Gold for premium features
+  },
+
+  // Accessibility Optimized Text
   text: {
-    primary: '#171717',
-    secondary: '#525252',
-    tertiary: '#737373',
-    disabled: '#a3a3a3',
-    inverse: '#ffffff',
-    link: '#3b82f6',
+    primary: '#18181B',      // WCAG AAA on white
+    secondary: '#52525B',    // WCAG AA on white
+    tertiary: '#71717A',     // Subtle text
+    inverse: '#FFFFFF',      // On dark backgrounds
+    muted: '#A1A1AA',        // Disabled state
+    link: '#7C3AED',         // Accessible purple
   },
 
-  // Border colors
-  border: {
-    default: '#e5e5e5',
-    focus: '#22c55e',
-    error: '#ef4444',
-    subtle: '#f5f5f5',
+  // Dark Mode Palette (Future implementation)
+  dark: {
+    background: '#0F1114',
+    surface: '#1A1D23',
+    elevated: '#23272F',
+    border: '#2D3139',
+    text: {
+      primary: '#F4F4F5',
+      secondary: '#A1A1AA',
+      tertiary: '#71717A',
+    },
   },
+} as const;
 
-  // Shadow colors for elevation
-  shadow: {
-    sm: 'rgba(0, 0, 0, 0.05)',
-    md: 'rgba(0, 0, 0, 0.1)',
-    lg: 'rgba(0, 0, 0, 0.15)',
-    xl: 'rgba(0, 0, 0, 0.25)',
-  },
-} as const
-
-export type ColorToken = typeof colors
-export type PrimaryColor = keyof typeof colors.primary
-export type SecondaryColor = keyof typeof colors.secondary
-export type MoodColor = keyof typeof colors.moods
-
-export const tailwindColors = {
-  primary: colors.primary,
-  secondary: colors.secondary,
-  accent: colors.accent,
-  ...colors.moods,
-} as const
-
-export function getColorValue(path: string): string {
-  const keys = path.split('.')
-  let value: any = colors
-
+// Type-safe color getter with opacity
+export function color(path: string, opacity?: number): string {
+  const keys = path.split('.');
+  let current: any = colors;
+  
   for (const key of keys) {
-    value = value?.[key]
-  }
-
-  return value || colors.primary[500]
-}
-
-export function withOpacity(color: string, opacity: number): string {
-  const hex = color.replace('#', '')
-  const r = Number.parseInt(hex.substring(0, 2), 16)
-  const g = Number.parseInt(hex.substring(2, 4), 16)
-  const b = Number.parseInt(hex.substring(4, 6), 16)
-
-  return `rgba(${r}, ${g}, ${b}, ${opacity})`
-}
-
-export function timeBasedTheme() {
-  const hour = new Date().getHours()
-
-  if (hour >= 5 && hour < 12) {
-    return {
-      gradient: colors.gradients.morning,
-      mood: 'energized',
-      greeting: 'Bom dia',
-    }
-  } else if (hour >= 12 && hour < 18) {
-    return {
-      gradient: colors.gradients.focus,
-      mood: 'focused',
-      greeting: 'Boa tarde',
-    }
-  } else if (hour >= 18 && hour < 22) {
-    return {
-      gradient: colors.gradients.evening,
-      mood: 'calm',
-      greeting: 'Boa noite',
-    }
-  } else {
-    return {
-      gradient: colors.gradients.sleep,
-      mood: 'sleepy',
-      greeting: 'Hora de descansar',
+    current = current[key];
+    if (!current) {
+      console.warn(`Color not found: ${path}`);
+      return '#000000';
     }
   }
+  
+  if (opacity && typeof current === 'string' && current.startsWith('#')) {
+    const hex = current.replace('#', '');
+    const alpha = Math.round(opacity * 255).toString(16).padStart(2, '0');
+    return `#${hex}${alpha}`;
+  }
+  
+  return current;
 }
 
-export const darkColors = {
-  ...colors,
-  surface: {
-    primary: '#0a0a0a',
-    secondary: '#171717',
-    tertiary: '#262626',
-    elevated: '#171717',
-    overlay: 'rgba(255, 255, 255, 0.1)',
-    backdrop: 'rgba(0, 0, 0, 0.8)',
+// Semantic color aliases for components
+export const semanticColors = {
+  // Backgrounds
+  bgPrimary: colors.surface.primary,
+  bgSecondary: colors.surface.secondary,
+  bgTertiary: colors.surface.tertiary,
+  
+  // Borders
+  borderDefault: colors.neutral[200],
+  borderFocus: colors.nuro.primary,
+  borderError: colors.functional.error,
+  
+  // Interactive states
+  interactive: {
+    default: colors.nuro.primary,
+    hover: colors.nuro.secondary,
+    pressed: colors.nuro.tertiary,
+    disabled: colors.neutral[300],
   },
-  text: {
-    primary: '#fafafa',
-    secondary: '#d4d4d4',
-    tertiary: '#a3a3a3',
-    disabled: '#737373',
-    inverse: '#171717',
-    link: '#60a5fa',
+  
+  // Session states
+  session: {
+    idle: colors.neutral[400],
+    active: colors.nuro.primary,
+    paused: colors.mood.anxious.muted,
+    completed: colors.functional.success,
   },
-  border: {
-    default: '#404040',
-    focus: '#4ade80',
-    error: '#f87171',
-    subtle: '#262626',
+  
+  // Meditation categories
+  categories: {
+    adhd: colors.mood.focused.base,
+    anxiety: colors.mood.calm.base,
+    sleep: colors.dark.surface,
+    focus: colors.mood.focused.intense,
+    stress: colors.mood.calm.dark,
+    general: colors.nuro.primary,
   },
-} as const
+} as const;
 
-export default colors
+// Animation color curves for breathing exercises
+export const breathingColors = {
+  inhale: {
+    from: colors.mood.calm.light,
+    to: colors.mood.calm.base,
+  },
+  hold: {
+    from: colors.mood.calm.base,
+    to: colors.nuro.primary,
+  },
+  exhale: {
+    from: colors.nuro.primary,
+    to: colors.nuro.glow,
+  },
+} as const;
+
+// Export type definitions
+export type ColorPath = keyof typeof colors;
+export type SemanticColor = keyof typeof semanticColors;
+export type MoodColor = keyof typeof colors.mood;
+export type GradientName = keyof typeof colors.gradients;

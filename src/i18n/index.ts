@@ -5,6 +5,7 @@ import * as SecureStore from 'expo-secure-store'
 
 import en from './locales/en.json'
 import pt from './locales/pt.json'
+import es from './locales/es.json'
 
 const resources = {
   en: { translation: en },
@@ -46,9 +47,9 @@ i18n
   .use(languageDetector)
   .use(initReactI18next)
   .init({
-    compatibilityJSON: 'v3',
+    compatibilityJSON: 'v4',
     resources,
-    lng: 'en',
+    lng: 'pt',
     fallbackLng: 'en',
     debug: __DEV__,
 
