@@ -1,17 +1,15 @@
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import type { User } from '../../../models/User'
-import { MMKV } from 'react-native-mmkv'
 import { create } from 'zustand'
-
-const storage = new MMKV({ id: 'auth-storage' })
 
 interface AuthStore {
   user: User | null
   tokens: string | null
   isHydrated: boolean
 
-  setAuth: (user: User, tokens: string) => void
-  logout: () => void
-  rehydrate: () => void
+  setAuth: (user: User, tokens: string) => Promise<void>
+  logout: () => Promise<void>
+  rehydrate: () => Promise<void>
 }
 
 export const useAuthStore = create<AuthStore>(set => ({
@@ -19,28 +17,45 @@ export const useAuthStore = create<AuthStore>(set => ({
   tokens: null,
   isHydrated: false,
 
-  setAuth: (user, tokens) => {
+  setAuth: async (user, tokens) => {
     set({ user, tokens })
-    storage.set('user', JSON.stringify(user))
-    storage.set('tokens', tokens)
-  },
-
-  logout: () => {
-    set({ user: null, tokens: null })
-    storage.delete('user')
-    storage.delete('tokens')
-  },
-
-  rehydrate: () => {
-    const userData = storage.getString('user')
-    const tokens = storage.getString('tokens')
-
-    if (userData && tokens) {
-      const user: User = JSON.parse(userData)
-
-      set({ user, tokens, isHydrated: true })
+    try {
+      await AsyncStorage.setItem('@auth_user', JSON.stringify(user))
+      await AsyncStorage.setItem('@auth_tokens', tokens)
+    } catch (error) {
+      console.error('Error saving auth data:', error)
     }
+  },
 
-    set({ isHydrated: true })
+  logout: async () => {
+    set({ user: null, tokens: null })
+    try {
+      await AsyncStorage.removeItem('@auth_user')
+      await AsyncStorage.removeItem('@auth_tokens')
+    } catch (error) {
+      console.error('Error clearing auth data:', error)
+    }
+  },
+
+  rehydrate: async () => {
+    console.log('🔄 Starting auth store rehydration...')
+    try {
+      const userData = await AsyncStorage.getItem('@auth_user')
+      const tokens = await AsyncStorage.getItem('@auth_tokens')
+
+      console.log('📱 Retrieved from storage - user:', !!userData, 'tokens:', !!tokens)
+
+      if (userData && tokens) {
+        const user: User = JSON.parse(userData)
+        console.log('✅ User found, setting authenticated state')
+        set({ user, tokens, isHydrated: true })
+      } else {
+        console.log('❌ No user found, setting unauthenticated state')
+        set({ user: null, tokens: null, isHydrated: true })
+      }
+    } catch (error) {
+      console.error('❗ Error rehydrating auth store:', error)
+      set({ user: null, tokens: null, isHydrated: true })
+    }
   },
 }))
