@@ -20,13 +20,13 @@ export function Button({
     disabled = false,
 }: ButtonProps) {
     const getButtonStyles = () => {
-        const baseStyles = 'flex-row items-center justify-center py-2 rounded-md transition-all duration-200'
+        const baseStyles = 'flex-row items-center justify-center transition-all duration-200'
 
         if (type === 'iconOnly') {
-            return `${baseStyles} w-12 h-12 rounded-full p-0`
+            return `${baseStyles} p-02 rounded-full`
         }
 
-        return baseStyles
+        return `${baseStyles} py-2 rounded-md`
     }
 
     const getColorStyles = () => {
@@ -119,6 +119,12 @@ export function Button({
                 ...(type === 'ghost' && {
                     backdropFilter: 'blur(10px)',
                     borderColor: colorStyles.border,
+                }),
+                ...(type === 'iconOnly' && {
+                    width: 75,
+                    height: 75,
+                    borderRadius: 1000,
+                    backgroundColor: colors.nuro.secondary,
                 }),
             }}
             activeOpacity={0.8}
