@@ -18,7 +18,9 @@
     "name_placeholder": "Enter how you would like to be called",
     "email_placeholder": "Enter your best email",
     "password_placeholder": "Enter your most secure password",
-    "register": "Register"
+    "register": "Register",
+    "noAccount": "Don't have an account?",
+    "register_no_account": "Register now"
   },
   "common": {
     "welcome": "Welcome",

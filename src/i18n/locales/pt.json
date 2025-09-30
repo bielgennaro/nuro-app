@@ -17,7 +17,9 @@
     "name_placeholder": "Entre como você gostaria de ser chamado",
     "email_placeholder": "Digite seu melhor e -mail",
     "password_placeholder": "Digite sua senha mais segura",
-    "register": "Cadastrar"
+    "register": "Cadastrar",
+    "noAccount": "Não tem uma conta?",
+    "register_no_account": "Registre -se agora"
   },
   "common": {
     "welcome": "Bem-vindo",

@@ -22,7 +22,7 @@ export function TextInput({
 }) {
     return (
         <View className="mb-2">
-            {label && <Text className="mb-1 text-white">{label}</Text>}
+            {label && <Text className="mb-1 text-primary-950">{label}</Text>}
             <View className={`flex-row border-nuro-dark items-center border rounded-md px-1 py-1 bg-white ${error ? 'border-red-500' : 'border-white/20'}`}>
                 {icon && <View className="mr-1">{icon}</View>}
                 <RNTextInput

@@ -1,65 +1,67 @@
 {
-    "onboarding": {
-        "title": "Tu viaje de bienestar y meditaci�n comienza aqu�",
-        "subtitle": "Encuentra la paz interior con Nuro",
-        "getStarted": "Comenzar"
-    },
-    "login": {
-        "welcome": "Bienvenido a Nuro",
-        "subtitle": "Inicia sesión para continuar tu viaje",
-        "name": "Nombre",
-        "email": "Correo electrónico",
-        "password": "Contraseña",
-        "login": "Iniciar sesión",
-        "continue": "Continuar",
-        "orContinueWith": "O continúa con",
-        "forgotPassword": "¿Olvidaste tu contraseña? ¡No hay problema!",
-        "placeholder": "Ingresa cómo te gustaría que te llamen",
-        "name_placeholder": "Ingresa cómo te gustaría que te llamen",
-        "email_placeholder": "Ingresa tu mejor correo electrónico",
-        "password_placeholder": "Ingresa tu contraseña más segura"
-    },
-    "common": {
-        "welcome": "Bienvenido",
-        "continue": "Continuar",
-        "back": "Atrás",
-        "next": "Siguiente",
-        "done": "Hecho",
-        "cancel": "Cancelar",
-        "save": "Guardar",
-        "loading": "Cargando..."
-    },
-    "meditation": {
-        "title": "Meditación",
-        "subtitle": "Encuentra tu paz interior",
-        "start": "Iniciar meditación",
-        "pause": "Pausar",
-        "resume": "Reanudar",
-        "finish": "Finalizar",
-        "duration": "Duración",
-        "breathe": "Respirar",
-        "relax": "Relajarse",
-        "focus": "Enfocarse"
-    },
-    "moods": {
-        "calm": "Tranquilo",
-        "focused": "Concentrado",
-        "anxious": "Ansioso",
-        "energized": "Energizado",
-        "sleepy": "Somnoliento"
-    },
-    "greetings": {
-        "morning": "Buenos días",
-        "afternoon": "Buenas tardes",
-        "evening": "Buenas noches",
-        "night": "Hora de descansar"
-    },
-    "settings": {
-        "title": "Configuración",
-        "language": "Idioma",
-        "notifications": "Notificaciones",
-        "privacy": "Privacidad",
-        "about": "Acerca de",
-        "version": "Versión"
-    }
+  "onboarding": {
+    "title": "Tu viaje de bienestar y meditaci�n comienza aqu�",
+    "subtitle": "Encuentra la paz interior con Nuro",
+    "getStarted": "Comenzar"
+  },
+  "login": {
+    "welcome": "Bienvenido a Nuro",
+    "subtitle": "Inicia sesión para continuar tu viaje",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "login": "Iniciar sesión",
+    "continue": "Continuar",
+    "orContinueWith": "O continúa con",
+    "forgotPassword": "¿Olvidaste tu contraseña? ¡No hay problema!",
+    "placeholder": "Ingresa cómo te gustaría que te llamen",
+    "name_placeholder": "Ingresa cómo te gustaría que te llamen",
+    "email_placeholder": "Ingresa tu mejor correo electrónico",
+    "password_placeholder": "Ingresa tu contraseña más segura",
+    "noAccount": "¿No tienes una cuenta?",
+    "register_no_account": "Registrarse ahora"
+  },
+  "common": {
+    "welcome": "Bienvenido",
+    "continue": "Continuar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "done": "Hecho",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "loading": "Cargando..."
+  },
+  "meditation": {
+    "title": "Meditación",
+    "subtitle": "Encuentra tu paz interior",
+    "start": "Iniciar meditación",
+    "pause": "Pausar",
+    "resume": "Reanudar",
+    "finish": "Finalizar",
+    "duration": "Duración",
+    "breathe": "Respirar",
+    "relax": "Relajarse",
+    "focus": "Enfocarse"
+  },
+  "moods": {
+    "calm": "Tranquilo",
+    "focused": "Concentrado",
+    "anxious": "Ansioso",
+    "energized": "Energizado",
+    "sleepy": "Somnoliento"
+  },
+  "greetings": {
+    "morning": "Buenos días",
+    "afternoon": "Buenas tardes",
+    "evening": "Buenas noches",
+    "night": "Hora de descansar"
+  },
+  "settings": {
+    "title": "Configuración",
+    "language": "Idioma",
+    "notifications": "Notificaciones",
+    "privacy": "Privacidad",
+    "about": "Acerca de",
+    "version": "Versión"
+  }
 }
