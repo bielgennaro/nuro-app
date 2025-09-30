@@ -1,11 +1,10 @@
+import { useState } from 'react'
 import { LoginScreen } from '@/features/auth/screens/LoginScreen'
 import { OnboardingScreen } from '@/features/auth/screens/OnboardingScreen'
-import { useState } from 'react'
 
 export enum Screen {
     LOGIN = 'login',
     ONBOARDING = 'onboarding',
-    // Adicione outras telas aqui futuramente
     // HOME = 'home',
     // PROFILE = 'profile',
     // MEDITATION = 'meditation',

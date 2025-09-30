@@ -2,7 +2,7 @@ import { Ionicons } from '@expo/vector-icons'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Image, Text, TouchableOpacity, View } from 'react-native'
+import { Alert, Image, Text, TouchableOpacity, View } from 'react-native'
 import Animated, {
     Easing,
     FadeIn,
@@ -15,14 +15,42 @@ import { TextInput } from '@/components/inputs/TextInput'
 import { Button } from '@/components/ui/Button'
 import { colors } from '@/constants/colors'
 import NuroNoBackground from '../../../../assets/nuro-no-background1.0.png'
+import { useAuthStore } from '../store/auth.store'
 
 export function LoginScreen() {
     const { t } = useTranslation()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [emailError, setEmailError] = useState('')
+    const [passwordError, setPasswordError] = useState('')
 
-    const handleLogin = () => {
-        // TODO: Implement login logic
+    const { login, isLoading } = useAuthStore()
+
+    const handleLogin = async () => {
+        setEmailError('')
+        setPasswordError('')
+
+        try {
+            await login({ email, password })
+
+            // FUTURE TODO - better toasts
+            Alert.alert('Sucesso', 'Login realizado com sucesso!')
+        }
+        catch (error: any) {
+            if (error.issues) {
+                error.issues.forEach((issue: any) => {
+                    if (issue.path[0] === 'email') {
+                        setEmailError(issue.message)
+                    }
+                    else if (issue.path[0] === 'password') {
+                        setPasswordError(issue.message)
+                    }
+                })
+            }
+            else {
+                Alert.alert('Erro', error.message || 'Erro ao realizar login')
+            }
+        }
     }
 
     const handleForgotPassword = () => {
@@ -93,6 +121,7 @@ export function LoginScreen() {
                         onChangeText={setEmail}
                         keyboardType="email-address"
                         icon={<Ionicons name="mail-outline" size={20} color={colors.primary[800]} />}
+                        error={emailError}
                     />
 
                     <TextInput
@@ -102,6 +131,7 @@ export function LoginScreen() {
                         onChangeText={setPassword}
                         secureTextEntry
                         icon={<Ionicons name="lock-closed-outline" size={20} color={colors.primary[800]} />}
+                        error={passwordError}
                     />
 
                     <View className="mt-2">
@@ -111,6 +141,7 @@ export function LoginScreen() {
                             color="primary"
                             type="solid"
                             icon={<Ionicons name="log-in-outline" size={20} color="white" />}
+                            disabled={isLoading}
                         />
                     </View>
 
