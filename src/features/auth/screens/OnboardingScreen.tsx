@@ -14,10 +14,12 @@ import Animated, {
 } from 'react-native-reanimated'
 import { Button } from '@/components/ui/Button'
 import { colors } from '@/constants/colors'
+import { useAuthStore } from '@/features/auth/store/auth.store'
 import NuroNoBackground from '../../../../assets/nuro-no-background1.0.png'
 
 export function OnboardingScreen() {
     const { t } = useTranslation()
+    const { user, getMe } = useAuthStore()
 
     const handleGetStarted = () => {
         // TODO
@@ -27,6 +29,17 @@ export function OnboardingScreen() {
     const buttonPulse = useSharedValue(1)
 
     useEffect(() => {
+        const fetchUserData = async () => {
+            try {
+                await getMe()
+            }
+            catch (error) {
+                console.error('Erro ao buscar dados do usuário:', error)
+            }
+        }
+
+        fetchUserData()
+
         breathingScale.value = withRepeat(
             withSequence(
                 withTiming(1.05, { duration: 3000, easing: Easing.inOut(Easing.ease) }),
@@ -76,6 +89,12 @@ export function OnboardingScreen() {
                     entering={FadeIn.delay(500).duration(800)}
                     className="text-left mt-8 px-5"
                 >
+                    <Text
+                        className="text-3xl font-semibold text-left mb-3"
+                        style={{ color: colors.text.primary }}
+                    >
+                        {t('onboarding.welcome', { name: user?.name || 'N/A' })}
+                    </Text>
                     <Text
                         className="text-3xl font-bold text-gray-900 text-left leading-tight"
                         style={{ color: colors.text.primary }}

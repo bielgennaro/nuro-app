@@ -1,10 +1,20 @@
 import { api } from '@/config/api.config'
 import type { User } from '@/models/User'
 import { loginSchema, type LoginInput } from '../schemas/login.schema'
+import { registerSchema, type RegisterInput } from '../schemas/register.schema'
 
 interface LoginResponse {
     user: User
     token: string
+}
+
+interface RegisterResponse {
+    user: User
+    token: string
+}
+
+interface MeResponse {
+    user: User
 }
 
 interface ErrorResponse {
@@ -14,20 +24,40 @@ interface ErrorResponse {
 
 export class AuthService {
     static async login(data: LoginInput): Promise<LoginResponse> {
-        const validatedData = loginSchema.parse(data)
-
         try {
+            const validatedData = loginSchema.parse(data)
             const response = await api.post<LoginResponse>('/auth/login', validatedData)
             return response.data
         }
         catch (error: any) {
-            throw error as ErrorResponse
+            console.error('[AuthService] Login - Erro:', error)
+            throw error
         }
     }
 
-    // static async register(name: string, email: string, password: string): Promise<{ user: User, token: string }> {
-    //     // TODO
-    // }
+    static async register(data: RegisterInput): Promise<RegisterResponse> {
+        try {
+            const validatedData = registerSchema.parse(data)
+
+            const response = await api.post<RegisterResponse>('/auth/register', validatedData)
+            return response.data
+        }
+        catch (error: any) {
+            console.error('[AuthService] Register - Erro:', error)
+            throw error
+        }
+    }
+
+    static async getMe(): Promise<User> {
+        try {
+            const response = await api.get<MeResponse>('/auth/me')
+            return response.data.user
+        }
+        catch (error: any) {
+            console.error('[AuthService] GetMe - Erro:', error)
+            throw error
+        }
+    }
 
     // static async verifyEmail(token: string): Promise<void> {
     //     // TODO

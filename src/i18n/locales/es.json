@@ -2,7 +2,8 @@
   "onboarding": {
     "title": "Tu viaje de bienestar y meditaci�n comienza aqu�",
     "subtitle": "Encuentra la paz interior con Nuro",
-    "getStarted": "Comenzar"
+    "getStarted": "Comenzar",
+    "welcome": "Hola, {{name}}!"
   },
   "login": {
     "welcome": "Bienvenido a Nuro",
@@ -20,6 +21,16 @@
     "password_placeholder": "Ingresa tu contraseña más segura",
     "noAccount": "¿No tienes una cuenta?",
     "register_no_account": "Registrarse ahora"
+  },
+  "register": {
+    "welcome": "Crear cuenta",
+    "subtitle": "Comienza tu viaje de bienestar",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "register_button": "Registrarse",
+    "hasAccount": "¿Ya tienes una cuenta?",
+    "login_link": "Inicia sesión ahora"
   },
   "common": {
     "welcome": "Bienvenido",

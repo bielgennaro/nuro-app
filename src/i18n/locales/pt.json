@@ -2,7 +2,8 @@
   "onboarding": {
     "title": "Sua jornada de bem-estar e meditação começa aqui",
     "subtitle": "Encontre paz interior com o Nuro",
-    "getStarted": "Começar Jornada"
+    "getStarted": "Começar Jornada",
+    "welcome": "Olá, {{name}}!"
   },
   "login": {
     "welcome": "Bem-vindo ao Nuro",
@@ -20,6 +21,16 @@
     "register": "Cadastrar",
     "noAccount": "Não tem uma conta?",
     "register_no_account": "Registre -se agora"
+  },
+  "register": {
+    "welcome": "Criar Conta",
+    "subtitle": "Comece sua jornada de bem-estar",
+    "name": "Nome",
+    "email": "Email",
+    "password": "Senha",
+    "register_button": "Cadastrar",
+    "hasAccount": "Já tem uma conta?",
+    "login_link": "Entrar agora"
   },
   "common": {
     "welcome": "Bem-vindo",

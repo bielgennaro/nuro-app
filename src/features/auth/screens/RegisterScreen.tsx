@@ -18,30 +18,35 @@ import { Screen, useNavigation } from '@/navigation/RootNavigator'
 import NuroNoBackground from '../../../../assets/nuro-no-background1.0.png'
 import { useAuthStore } from '../store/auth.store'
 
-export function LoginScreen() {
+export function RegisterScreen() {
     const { t } = useTranslation()
     const { navigateTo } = useNavigation()
+    const [name, setName] = useState<string>('')
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
+    const [nameError, setNameError] = useState<string>('')
     const [emailError, setEmailError] = useState<string>('')
     const [passwordError, setPasswordError] = useState<string>('')
 
-    const { login, isLoading } = useAuthStore()
+    const { register, isLoading } = useAuthStore()
 
-    const handleLogin = async () => {
+    const handleRegister = async () => {
+        setNameError('')
         setEmailError('')
         setPasswordError('')
 
         try {
-            await login({ email, password })
+            await register({ name, email, password })
 
-            // FUTURE TODO - better toasts
-            Alert.alert('Sucesso', 'Login realizado com sucesso!')
+            navigateTo(Screen.ONBOARDING)
         }
         catch (error: any) {
             if (error.issues) {
                 error.issues.forEach((issue: any) => {
-                    if (issue.path[0] === 'email') {
+                    if (issue.path[0] === 'name') {
+                        setNameError(issue.message)
+                    }
+                    else if (issue.path[0] === 'email') {
                         setEmailError(issue.message)
                     }
                     else if (issue.path[0] === 'password') {
@@ -50,17 +55,13 @@ export function LoginScreen() {
                 })
             }
             else {
-                Alert.alert('Erro', error.message || 'Erro ao realizar login')
+                Alert.alert('Erro', error.message || 'Erro ao realizar cadastro')
             }
         }
     }
 
-    const handleForgotPassword = () => {
-        // TODO: Navigate to forgot password screen
-    }
-
-    const handleRegister = () => {
-        navigateTo(Screen.REGISTER)
+    const handleLogin = () => {
+        navigateTo(Screen.LOGIN)
     }
 
     const breathingScale = useSharedValue(1)
@@ -107,18 +108,27 @@ export function LoginScreen() {
                         className="text-3xl font-bold text-left mb-2"
                         style={{ color: colors.text.primary }}
                     >
-                        {t('login.welcome')}
+                        {t('register.welcome')}
                     </Text>
                     <Text
                         className="text-lg text-left mb-2"
                         style={{ color: colors.text.secondary }}
                     >
-                        {t('login.subtitle')}
+                        {t('register.subtitle')}
                     </Text>
 
                     <TextInput
-                        label={t('login.email')}
-                        placeholder={t('login.email')}
+                        label={t('register.name')}
+                        placeholder={t('register.name')}
+                        value={name}
+                        onChangeText={setName}
+                        icon={<Ionicons name="person-outline" size={20} color={colors.primary[800]} />}
+                        error={nameError}
+                    />
+
+                    <TextInput
+                        label={t('register.email')}
+                        placeholder={t('register.email')}
                         value={email}
                         onChangeText={setEmail}
                         keyboardType="email-address"
@@ -127,8 +137,8 @@ export function LoginScreen() {
                     />
 
                     <TextInput
-                        label={t('login.password')}
-                        placeholder={t('login.password')}
+                        label={t('register.password')}
+                        placeholder={t('register.password')}
                         value={password}
                         onChangeText={setPassword}
                         secureTextEntry
@@ -138,43 +148,31 @@ export function LoginScreen() {
 
                     <View className="mt-2">
                         <Button
-                            title="Login"
-                            onPress={handleLogin}
+                            title={t('register.register_button')}
+                            onPress={handleRegister}
                             color="primary"
                             type="solid"
-                            icon={<Ionicons name="log-in-outline" size={20} color="white" />}
+                            icon={<Ionicons name="person-add-outline" size={20} color="white" />}
                             disabled={isLoading}
                         />
                     </View>
-
-                    <TouchableOpacity
-                        onPress={handleForgotPassword}
-                        className="mt-4"
-                    >
-                        <Text
-                            className="text-base text-center"
-                            style={{ color: colors.text.secondary }}
-                        >
-                            {t('login.forgotPassword')}
-                        </Text>
-                    </TouchableOpacity>
 
                     <View className="mt-4 items-center">
                         <Text
                             className="text-base"
                             style={{ color: colors.text.primary }}
                         >
-                            {t('login.noAccount')}
+                            {t('register.hasAccount')}
                         </Text>
                         <TouchableOpacity
-                            onPress={handleRegister}
+                            onPress={handleLogin}
                             className="mt-1"
                         >
                             <Text
                                 className="text-base font-semibold"
                                 style={{ color: colors.nuro.tertiary }}
                             >
-                                {t('login.register_no_account')}
+                                {t('register.login_link')}
                             </Text>
                         </TouchableOpacity>
                     </View>

@@ -1,6 +1,18 @@
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import axios from 'axios'
+import { Platform } from 'react-native'
 
-export const API_BASE_URL = process.env.EXPO_PUBLIC_API_URL
+const getApiUrl = () => {
+    if (__DEV__) {
+        if (Platform.OS === 'android') {
+            return 'http://10.0.2.2:3000' // local dev
+        }
+
+        return 'http://127.0.0.1:3000' // default fallback 
+    }
+}
+
+export const API_BASE_URL = getApiUrl()
 
 export const api = axios.create({
     baseURL: API_BASE_URL,
@@ -10,8 +22,24 @@ export const api = axios.create({
     },
 })
 
+export function setAuthToken(token: string | null) {
+    if (token) {
+        api.defaults.headers.common.Authorization = `Bearer ${token}`
+    }
+    else {
+        delete api.defaults.headers.common.Authorization
+    }
+}
+
 api.interceptors.request.use(
-    (config) => {
+    async (config) => {
+        // if the Authorization header is not set, try to get the token from AsyncStorage
+        if (!config.headers.Authorization) {
+            const token = await AsyncStorage.getItem('@auth_tokens')
+            if (token) {
+                config.headers.Authorization = `Bearer ${token}`
+            }
+        }
         return config
     },
     (error) => {
