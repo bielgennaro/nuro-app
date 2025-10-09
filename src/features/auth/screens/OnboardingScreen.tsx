@@ -1,3 +1,7 @@
+import { Button } from '@/components/ui/Button'
+import { colors } from '@/constants/colors'
+import { useAuthStore } from '@/features/auth/store/auth.store'
+import { Screen, useNavigation } from '@/navigation/RootNavigator'
 import { Ionicons } from '@expo/vector-icons'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useEffect } from 'react'
@@ -12,17 +16,15 @@ import Animated, {
     withSequence,
     withTiming,
 } from 'react-native-reanimated'
-import { Button } from '@/components/ui/Button'
-import { colors } from '@/constants/colors'
-import { useAuthStore } from '@/features/auth/store/auth.store'
 import NuroNoBackground from '../../../../assets/nuro-no-background1.0.png'
 
 export function OnboardingScreen() {
     const { t } = useTranslation()
+    const { navigateTo } = useNavigation()
     const { user, getMe } = useAuthStore()
 
     const handleGetStarted = () => {
-        // TODO
+        navigateTo(Screen.PRESENTATION)
     }
 
     const breathingScale = useSharedValue(1)

@@ -1,8 +1,12 @@
+import { TextInput } from '@/components/inputs/TextInput'
+import { Button } from '@/components/ui/Button'
+import { colors } from '@/constants/colors'
+import { Screen, useNavigation } from '@/navigation/RootNavigator'
 import { Ionicons } from '@expo/vector-icons'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Alert, Image, Text, TouchableOpacity, View } from 'react-native'
+import { Image, Text, TouchableOpacity, View } from 'react-native'
 import Animated, {
     Easing,
     FadeIn,
@@ -11,10 +15,7 @@ import Animated, {
     withSequence,
     withTiming,
 } from 'react-native-reanimated'
-import { TextInput } from '@/components/inputs/TextInput'
-import { Button } from '@/components/ui/Button'
-import { colors } from '@/constants/colors'
-import { Screen, useNavigation } from '@/navigation/RootNavigator'
+import { Toast } from 'toastify-react-native'
 import NuroNoBackground from '../../../../assets/nuro-no-background1.0.png'
 import { useAuthStore } from '../store/auth.store'
 
@@ -26,7 +27,7 @@ export function LoginScreen() {
     const [emailError, setEmailError] = useState<string>('')
     const [passwordError, setPasswordError] = useState<string>('')
 
-    const { login, isLoading } = useAuthStore()
+    const { login, isLoading, user } = useAuthStore()
 
     const handleLogin = async () => {
         setEmailError('')
@@ -35,8 +36,15 @@ export function LoginScreen() {
         try {
             await login({ email, password })
 
-            // FUTURE TODO - better toasts
-            Alert.alert('Sucesso', 'Login realizado com sucesso!')
+            Toast.show({
+                type: 'success',
+                icon: 'checkmark-done-outline',
+                text1: t('register.navigate_to_login_success', { username: user?.name }),
+                position: 'top',
+                visibilityTime: 2000,
+            })
+
+            navigateTo(Screen.PRESENTATION)
         }
         catch (error: any) {
             if (error.issues) {
@@ -50,7 +58,12 @@ export function LoginScreen() {
                 })
             }
             else {
-                Alert.alert('Erro', error.message || 'Erro ao realizar login')
+                Toast.show({
+                    type: 'error',
+                    text1: t('register.navigate_to_login_error'),
+                    position: 'top',
+                    visibilityTime: 4000,
+                })
             }
         }
     }

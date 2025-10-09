@@ -20,7 +20,8 @@
     "password_placeholder": "Digite sua senha mais segura",
     "register": "Cadastrar",
     "noAccount": "Não tem uma conta?",
-    "register_no_account": "Registre -se agora"
+    "register_no_account": "Registre -se agora",
+    "success": "Bem-vindo de volta, {{username}}!"
   },
   "register": {
     "welcome": "Criar Conta",
@@ -30,7 +31,11 @@
     "password": "Senha",
     "register_button": "Cadastrar",
     "hasAccount": "Já tem uma conta?",
-    "login_link": "Entrar agora"
+    "login_link": "Entrar agora",
+    "navigate_to_login_success": "Bem-vindo {{username}}!",
+    "navigate_to_login_error": "Ops!\nE-mail ou senha incorretos",
+    "success": "Conta criada com sucesso!",
+    "error": "Erro ao criar conta. Tente novamente."
   },
   "common": {
     "welcome": "Bem-vindo",
@@ -74,6 +79,18 @@
     "privacy": "Privacidade",
     "about": "Sobre",
     "version": "Versão"
+  },
+  "presentation": {
+    "title": "Como podemos te ajudar?",
+    "subtitle": "Você pode escolher mais de um!",
+    "moods": {
+      "adhd": "TDAH",
+      "depression": "Depressão",
+      "focus": "Foco",
+      "panic": "Pânico",
+      "sleep": "Sono",
+      "stress": "Estresse"
+    }
   },
   "login_screen": {
     "password_placeholder": "Digite sua senha",

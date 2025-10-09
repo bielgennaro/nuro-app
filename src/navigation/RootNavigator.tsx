@@ -1,12 +1,14 @@
-import { createContext, useState, useContext } from 'react'
 import { LoginScreen } from '@/features/auth/screens/LoginScreen'
-import { RegisterScreen } from '@/features/auth/screens/RegisterScreen'
 import { OnboardingScreen } from '@/features/auth/screens/OnboardingScreen'
+import { RegisterScreen } from '@/features/auth/screens/RegisterScreen'
+import { PresentationScreen } from '@/features/presentation/screens/PresentationScreen'
+import { createContext, useContext, useState } from 'react'
 
 export enum Screen {
     LOGIN = 'login',
     REGISTER = 'register',
     ONBOARDING = 'onboarding',
+    PRESENTATION = 'presentation',
     // HOME = 'home',
     // PROFILE = 'profile',
     // MEDITATION = 'meditation',
@@ -42,6 +44,8 @@ export function RootNavigator() {
                 return <RegisterScreen />
             case Screen.ONBOARDING:
                 return <OnboardingScreen />
+            case Screen.PRESENTATION:
+                return <PresentationScreen />
             default:
                 return <LoginScreen />
         }

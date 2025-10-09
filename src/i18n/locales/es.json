@@ -20,7 +20,8 @@
     "email_placeholder": "Ingresa tu mejor correo electrónico",
     "password_placeholder": "Ingresa tu contraseña más segura",
     "noAccount": "¿No tienes una cuenta?",
-    "register_no_account": "Registrarse ahora"
+    "register_no_account": "Registrarse ahora",
+    "success": "¡Bienvenido de nuevo, {{username}}!"
   },
   "register": {
     "welcome": "Crear cuenta",
@@ -30,7 +31,11 @@
     "password": "Contraseña",
     "register_button": "Registrarse",
     "hasAccount": "¿Ya tienes una cuenta?",
-    "login_link": "Inicia sesión ahora"
+    "login_link": "Inicia sesión ahora",
+    "navigate_to_login_success": "¡Bienvenido {{username}}!",
+    "navigate_to_login_error": "¡Ups!\nCorreo electrónico o contraseña incorrectos",
+    "success": "¡Cuenta creada exitosamente!",
+    "error": "Error al crear cuenta. Intenta de nuevo."
   },
   "common": {
     "welcome": "Bienvenido",
@@ -74,5 +79,17 @@
     "privacy": "Privacidad",
     "about": "Acerca de",
     "version": "Versión"
+  },
+  "presentation": {
+    "title": "¿Cómo podemos ayudarte?",
+    "subtitle": "¡Puedes elegir más de uno!",
+    "moods": {
+      "adhd": "TDAH",
+      "depression": "Depresión",
+      "focus": "Concentración",
+      "panic": "Pánico",
+      "sleep": "Sueño",
+      "stress": "Estrés"
+    }
   }
 }

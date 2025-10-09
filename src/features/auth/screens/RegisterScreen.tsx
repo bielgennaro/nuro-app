@@ -2,7 +2,7 @@ import { Ionicons } from '@expo/vector-icons'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Alert, Image, Text, TouchableOpacity, View } from 'react-native'
+import { Image, Text, TouchableOpacity, View } from 'react-native'
 import Animated, {
     Easing,
     FadeIn,
@@ -11,6 +11,8 @@ import Animated, {
     withSequence,
     withTiming,
 } from 'react-native-reanimated'
+import { Toast } from 'toastify-react-native'
+
 import { TextInput } from '@/components/inputs/TextInput'
 import { Button } from '@/components/ui/Button'
 import { colors } from '@/constants/colors'
@@ -38,6 +40,13 @@ export function RegisterScreen() {
         try {
             await register({ name, email, password })
 
+            Toast.show({
+                type: 'success',
+                text1: t('register.success'),
+                position: 'top',
+                visibilityTime: 4000,
+            })
+
             navigateTo(Screen.ONBOARDING)
         }
         catch (error: any) {
@@ -55,7 +64,12 @@ export function RegisterScreen() {
                 })
             }
             else {
-                Alert.alert('Erro', error.message || 'Erro ao realizar cadastro')
+                Toast.show({
+                    type: 'error',
+                    text1: t('register.error'),
+                    position: 'top',
+                    visibilityTime: 4000,
+                })
             }
         }
     }
